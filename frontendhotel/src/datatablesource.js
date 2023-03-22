@@ -38,6 +38,56 @@ export const userColumns = [
   },
 ];
 
+export const roomColumns = [
+  { field: "id", headerName: "STT", width: 70 },
+  {
+    field: "so_phong",
+    headerName: "Số Phòng",
+    width: 230
+  },
+  {
+    field: "ten_lp",
+    headerName: "Tên Loại Phòng",
+    width: 200,
+  },
+  {
+    field: "so_nguoi",
+    headerName: "Số người",
+    width: 100,
+  },
+  {
+    field: "don_gia",
+    headerName: "Giá Phòng",
+    width: 100,
+  },
+  {
+    field: "tinh_trang",
+    headerName: "Status",
+    width: 160,
+    renderCell: (params) => {
+    var sta = "pending";
+      if(params.row.tinh_trang === 1){
+        sta = "active";
+      }else if(params.row.tinh_trang === 0){
+        sta = "pending";
+      }else{
+        sta = "passive";
+      }
+      return (
+        <div className={`cellWithStatus ${sta}`}>
+          {sta}
+        </div>
+      );
+    },
+  },
+];
+
+
+export const roomsRows = [
+  {
+    id: 1
+  }]
+
 //temporary data
 export const userRows = [
   {

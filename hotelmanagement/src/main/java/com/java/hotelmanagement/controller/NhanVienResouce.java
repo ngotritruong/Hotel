@@ -61,14 +61,14 @@ public class NhanVienResouce {
 		NhanVien checkNhanVien = nhanVienService.findNhanVienByEmail(nhanVien.getEmail());
 		if(checkNhanVien == null) {
 			System.out.println(1);
-			return new ResponseEntity<>("User not found", HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>("Không tìm thấy nhân viên", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		else if (checkNhanVien.getMat_khau().equals(nhanVien.getMat_khau())) {	
 			System.out.println(2);
 			return ResponseEntity.ok(checkNhanVien);
 		}
 		System.out.println(3);
-		return new ResponseEntity<>("User not found", HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<>("Không tìm thấy nhân viên", HttpStatus.INTERNAL_SERVER_ERROR);
 			
 	}
 }

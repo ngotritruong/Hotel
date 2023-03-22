@@ -14,9 +14,15 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
-
+import { useCookies } from 'react-cookie'
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
+  const [cookies, removeCookie] = useCookies(['Name']);
+  const handleLogout = () =>{
+    removeCookie(['Name']);
+    window.location.href = "/login";
+  }
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -28,15 +34,25 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          <li>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <li>
             <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
+              <span>Dashboard</span>
+            </li>
+          </Link>
+          
           <p className="title">LISTS</p>
+
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>Users</span>
+            </li>
+          </Link>
+          <Link to="/rooms" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonOutlineIcon className="icon" />
+              <span>Phòng</span>
             </li>
           </Link>
           <Link to="/products" style={{ textDecoration: "none" }}>
@@ -54,10 +70,12 @@ const Sidebar = () => {
             <span>Delivery</span>
           </li>
           <p className="title">USEFUL</p>
-          <li>
-            <InsertChartIcon className="icon" />
-            <span>Stats</span>
-          </li>
+          <Link to="/staffs" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonOutlineIcon className="icon" />
+              <span>Nhân viên</span>
+            </li>
+          </Link>
           <li>
             <NotificationsNoneIcon className="icon" />
             <span>Notifications</span>
@@ -82,7 +100,7 @@ const Sidebar = () => {
           </li>
           <li>
             <ExitToAppIcon className="icon" />
-            <span>Logout</span>
+            <span onClick={handleLogout}>Logout</span>
           </li>
         </ul>
       </div>

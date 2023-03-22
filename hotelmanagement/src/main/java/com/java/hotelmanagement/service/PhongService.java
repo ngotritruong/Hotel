@@ -23,7 +23,6 @@ public class PhongService {
 	}
 	
 	public List<Phong> findAllPhong() {
-		System.out.println(phongRepo.findAllPhong().get(0).toString());
 		return phongRepo.findAllPhong();
 	}
 	
