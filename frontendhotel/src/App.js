@@ -3,9 +3,15 @@ import Login from "./pages/login/Login";
 import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
-import AddNewRoom from "./pages/rooms/AddNewRoom";
+import AddNewRoom from "./pages/rooms/addnewrooms/AddNewRoom";
+import UpdateRoom from "./pages/rooms/updaterooms/UpdateRoom";
+
+import AddNewStaff from "./pages/staffs/addnewstaff/AddNewStaff";
+import UpdateStaff from "./pages/staffs/updatestaff/UpdateStaff";
+import ViewStaff from "./pages/staffs/viewstaff/ViewStaff";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { productInputs, userInputs } from "./formSource";
+import { productInputs, userInputs} from "./formSource";
 import "./style/dark.scss";
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
@@ -54,11 +60,27 @@ function App() {
               <Route index element={<Rooms />} />
               <Route
                 path="addnewroom"
-                element={<AddNewRoom inputs={userInputs} title="Add New room" />}
+                element={<AddNewRoom title="Add New Room"/>}
+              />
+              <Route
+                path="updateroom"
+                element={<UpdateRoom title="Update Room"/>}
               />
             </Route>
             <Route path="staffs">
               <Route index element={<Staffs />} />
+              <Route
+                path="addnewstaff"
+                element={<AddNewStaff title="Add New Staff"/>}
+              />
+              <Route
+                path="updatestaff"
+                element={<UpdateStaff title="Update Staff"/>}
+              />
+              <Route
+                path="viewstaff"
+                element={<ViewStaff/>}
+              />
             </Route>
           </Route>
         </Routes>

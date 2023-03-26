@@ -1,15 +1,29 @@
 import "./staffs.scss"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
-import Datatable from "../../components/datatable/Datatable"
+import DataTableStaff from "../../components/datatable/DataTableStaff"
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 const Staffs = () => {
+  const [staff , setStaff] = useState();
+  useEffect(() => {
+    const getPins = async () => {
+      try {
+        const allStaff = await axios.get("/nhanvien/all");
+        setStaff(allStaff.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getPins();
+  }, []);
   return (
     <div className="list">
       <Sidebar/>
       <div className="listContainer">
         <Navbar/>
-        <Datatable/>
+        {staff && <DataTableStaff staff={staff}/>}
       </div>
     </div>
   )

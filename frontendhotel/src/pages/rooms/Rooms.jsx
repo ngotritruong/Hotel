@@ -12,15 +12,13 @@ const Rooms = () => {
       try {
         const allRooms = await axios.get("/phong/all");
         setRooms(allRooms.data);
-        console.log(rooms)
+        
       } catch (err) {
         console.log(err);
       }
     };
     getPins();
   }, []);
-
-  console.log(rooms)
   return (
     <div className="list">
       <Sidebar/>

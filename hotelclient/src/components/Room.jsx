@@ -1,36 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import defaultImage from "../images/details-1.jpeg";
 import PropTypes from "prop-types";
-
+import room1 from "../images/room-1.jpeg";
 export default function Room({ room }) {
-  const { name, slug, price, images, description, type, extras } = room;
+  
   return (
     <article className="room">
       <div className="img-container">
-        <img src={images[0] || defaultImage} alt="single room" />
+        <img src={room1} alt="single room" />
         <div className="price-top">
-          <h6>${price}</h6>
+          <h6>10000VND</h6>
           <p>per night</p>
         </div>
-        <Link to={`/rooms/${slug}`} className="btn-primary room-link">
+        <Link to={`/rooms/`} className="btn-primary room-link">
           Features
         </Link>
       </div>
-      <p className="room-info">
-        Name: {name} <br />
-        Grade: {type} <br />
-        Description: {extras}
-      </p>
+      <div className="roomDec">
+        <span>Room type: Vip</span>
+        <span className="">Name: 2 </span>
+        <br />
+        <span>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, magnam nobis saepe quae a reiciendis autem ipsa modi pariatur rem beatae laboriosam vitae. Ipsam recusandae molestiae quaerat quae! Accusamus, dicta.</span>
+      </div>
     </article>
   );
 }
 
-Room.propTypes = {
-  room: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-    images: PropTypes.arrayOf(PropTypes.string).isRequired,
-    price: PropTypes.number.isRequired,
-  }),
-};
+

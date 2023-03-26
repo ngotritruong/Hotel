@@ -20,13 +20,13 @@ public class NhanVien implements Serializable {
 	private String ten_cv;
 	private String ten_nv;
 	private String ngay_sinh;
-	private String gioi_tinh;
+	private byte gioi_tinh;
 	private String mat_khau;
 	private String email;
 	public NhanVien() {
 	}
 	
-	public NhanVien(Long id_cv, String ten_nv, String ngay_sinh, String gioi_tinh, String mat_khau,
+	public NhanVien(Long id_cv, String ten_nv, String ngay_sinh, byte gioi_tinh, String mat_khau,
 			String email) {
 		this.id_cv = id_cv;
 		this.ten_nv = ten_nv;
@@ -38,7 +38,7 @@ public class NhanVien implements Serializable {
 	
 	
 
-	public NhanVien(Long id_cv, String ten_cv, String ten_nv, String ngay_sinh, String gioi_tinh,
+	public NhanVien(Long id_cv, String ten_cv, String ten_nv, String ngay_sinh, byte gioi_tinh,
 			String mat_khau, String email) {
 		this.id_cv = id_cv;
 		this.ten_cv = ten_cv;
@@ -89,11 +89,11 @@ public class NhanVien implements Serializable {
 		this.ngay_sinh = ngay_sinh;
 	}
 
-	public String getGioi_tinh() {
+	public byte getGioi_tinh() {
 		return gioi_tinh;
 	}
 
-	public void setGioi_tinh(String gioi_tinh) {
+	public void setGioi_tinh(byte gioi_tinh) {
 		this.gioi_tinh = gioi_tinh;
 	}
 

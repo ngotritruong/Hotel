@@ -7,6 +7,7 @@ import StoreIcon from "@mui/icons-material/Store";
 import InsertChartIcon from "@mui/icons-material/InsertChart";
 import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSystemDaydreamOutlined";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
@@ -46,13 +47,13 @@ const Sidebar = () => {
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
-              <span>Users</span>
+              <span>Quản lý khách hàng</span>
             </li>
           </Link>
           <Link to="/rooms" style={{ textDecoration: "none" }}>
             <li>
-              <PersonOutlineIcon className="icon" />
-              <span>Phòng</span>
+              <MapsHomeWorkIcon className="icon" />
+              <span>Quản lý Phòng</span>
             </li>
           </Link>
           <Link to="/products" style={{ textDecoration: "none" }}>

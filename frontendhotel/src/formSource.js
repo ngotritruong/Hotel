@@ -74,4 +74,51 @@ export const userInputs = [
       placeholder: "in stock",
     },
   ];
+
+
+  // Rome input 
+  export const roomInputs = [
+    {
+      id: 1,
+      label: "Mã Loại Phòng",
+      type: "number",
+      placeholder: "123",
+    },
+    {
+      id: 2,
+      label: "Số Phòng",
+      type: "number",
+      placeholder: "1234",
+    },
+    {
+      id: 3,
+      label: "Tên loại phòng",
+      type: "text",
+      placeholder: "VIP",
+    },
+    {
+      id: 4,
+      label: "Số Người",
+      type: "number",
+      placeholder: "9",
+    },
+    {
+      id: 5,
+      label: "Mô tả loại phòng",
+      type: "text",
+    },
+    {
+      id: 6,
+      label: "Đơn Giá",
+      type: "number",
+      placeholder: "12334455",
+    },
+    {
+      id: 7,
+      label: "Tình trạng (0 - penđing, 1 - active) ",
+      type: "number",
+      placeholder: "0",
+      pattern: '[0-1]'
+    },
+  ];
   

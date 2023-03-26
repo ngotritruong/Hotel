@@ -1,3 +1,4 @@
+import staffImage from './images/employee.png';
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {
@@ -37,7 +38,7 @@ export const userColumns = [
     },
   },
 ];
-
+// phòng
 export const roomColumns = [
   { field: "id", headerName: "STT", width: 70 },
   {
@@ -81,12 +82,58 @@ export const roomColumns = [
     },
   },
 ];
-
-
-export const roomsRows = [
+//staff colom
+export const staffColumns = [
+  { field: "id", headerName: "STT", width: 70 },
   {
-    id: 1
-  }]
+    field: "ten_nv",
+    headerName: "Tên nhân viên",
+    width: 230,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={staffImage} alt="avatar" />
+          {params.row.ten_nv}
+        </div>
+      );
+    },
+  },
+  {
+    field: "ten_cv",
+    headerName: "Tên chức vụ",
+    width: 120
+  },
+  {
+    field: "gioi_tinh",
+    headerName: "Status",
+    width: 160,
+    renderCell: (params) => {
+    var sta = "Nam";
+      if(params.row.gioi_tinh == "1"){
+        sta = "Nam";
+      }else{
+        sta = "Nữ";
+      }
+      return (
+        <div className={`cellWithStatus ${sta}`}>
+          {sta}
+        </div>
+      );
+    },
+  },
+  {
+    field: "email",
+    headerName: "Email",
+    width: 250,
+  },
+  {
+    field: "ngay_sinh",
+    headerName: "Ngày Sinh",
+    width: 190,
+  }
+  
+];
+
 
 //temporary data
 export const userRows = [
