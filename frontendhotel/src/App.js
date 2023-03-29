@@ -18,12 +18,18 @@ import { DarkModeContext } from "./context/darkModeContext";
 import Rooms from "./pages/rooms/Rooms";
 import { useCookies } from 'react-cookie'
 import Staffs from "./pages/staffs/Staffs";
+import Customer from "./pages/customer/Customer";
+import AddNewCustomer from "./pages/customer/addNewCustomer/AddNewCustomer";
+import ViewCustomer from "./pages/customer/viewCustomer/ViewCustomer";
+import UpdateCustomer from "./pages/customer/updateCustomer/UpdateCustomer";
+import Reservation from "./pages/reservation/Reservation";
+import AddReservation from "./pages/reservation/addreservation/AddReservtion";
+import UpdateReservation from "./pages/reservation/updatereservation/UpdateReservation";
 function App() {
   const { darkMode } = useContext(DarkModeContext);
   const [cookies, setCookie] = useCookies(['Name']);
  
   const [user, setUser] = useState("");
-  console.log(user);
   useEffect(() => {
     if(cookies.Name == "undefined"){
       setUser("");
@@ -81,6 +87,33 @@ function App() {
                 path="viewstaff"
                 element={<ViewStaff/>}
               />
+            </Route>
+            <Route path="customer">
+              <Route index element={<Customer />} />
+              <Route
+                path="addnewcustomer"
+                element={<AddNewCustomer title="Add New Staff"/>}
+              />
+              <Route
+                path="updatecustomer"
+                element={<UpdateCustomer title="Update Customer"/>}
+              />
+              <Route
+                path="viewcustomer"
+                element={<ViewCustomer/>}
+              />
+            </Route>
+            <Route path="reservation">
+              <Route index element={<Reservation />} />
+              <Route
+                path="addreservation"
+                element={<AddReservation title="Add New Staff"/>}
+              />
+              <Route
+                path="updatereservation"
+                element={<UpdateReservation title="Update Customer"/>}
+              />
+              
             </Route>
           </Route>
         </Routes>

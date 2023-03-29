@@ -1,4 +1,5 @@
 import staffImage from './images/employee.png';
+import userImage from './images/user.png';
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {
@@ -40,7 +41,7 @@ export const userColumns = [
 ];
 // phòng
 export const roomColumns = [
-  { field: "id", headerName: "STT", width: 70 },
+  { field: "id", headerName: "ID", width: 70 },
   {
     field: "so_phong",
     headerName: "Số Phòng",
@@ -82,9 +83,11 @@ export const roomColumns = [
     },
   },
 ];
-//staff colom
+//staff colum 
+
+
 export const staffColumns = [
-  { field: "id", headerName: "STT", width: 70 },
+  { field: "id", headerName: "ID", width: 70 },
   {
     field: "ten_nv",
     headerName: "Tên nhân viên",
@@ -105,7 +108,7 @@ export const staffColumns = [
   },
   {
     field: "gioi_tinh",
-    headerName: "Status",
+    headerName: "Giới tính",
     width: 160,
     renderCell: (params) => {
     var sta = "Nam";
@@ -133,7 +136,95 @@ export const staffColumns = [
   }
   
 ];
+//Customer columns
 
+
+export const customerColumns = [
+  { field: "id", headerName: "ID", width: 70 },
+  {
+    field: "ho_ten",
+    headerName: "Tên Khách Hàng",
+    width: 200,
+    renderCell: (params) => {
+      return (
+        <div className="cellWithImg">
+          <img className="cellImg" src={userImage} alt="avatar" />
+          {params.row.ho_ten}
+        </div>
+      );
+    },
+  },
+  {
+    field: "cccd",
+    headerName: "Số căn cước",
+    width: 100
+  },
+  {
+    field: "gioi_tinh",
+    headerName: "Giới tính",
+    width: 90,
+    renderCell: (params) => {
+    var sta = "Nam";
+      if(params.row.gioi_tinh == "1"){
+        sta = "Nam";
+      }else{
+        sta = "Nữ";
+      }
+      return (
+        <div className={`cellWithStatus ${sta}`}>
+          {sta}
+        </div>
+      );
+    },
+  },
+  {
+    field: "email",
+    headerName: "Email",
+    width: 200,
+  },
+  {
+    field: "ngay_sinh",
+    headerName: "Ngày Sinh",
+    width: 140,
+  },
+  {
+    field: "sdt",
+    headerName: "Số điện thoại",
+    width: 130,
+  } 
+];
+
+// Reservation column 
+
+export const reservationColumns = [
+  { field: "id", headerName: "ID", width: 70 },
+  {
+    field: "ten_kh",
+    headerName: "Tên khách hàng",
+    width: 180
+  },
+  {
+    field: "ten_nv",
+    headerName: "Tên nhân viên",
+    width: 180,
+  },
+  {
+    field: "ngay_dat",
+    headerName: "Ngày đặt",
+    width: 180,
+  },
+  {
+    field: "ngay_tra_dk",
+    headerName: "Ngày trả dự kiến",
+    width: 180,
+  },
+  {
+    field: "tien_coc",
+    headerName: "Tiền cọc",
+    width: 120,
+  }
+  
+];
 
 //temporary data
 export const userRows = [

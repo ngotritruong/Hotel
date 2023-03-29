@@ -5,6 +5,8 @@ import { useEffect, useState, useRef } from "react";
 import imagephong from "../../../images/imagephong.jpg"
 import './addNewStaff.scss'
 import axios from "axios";
+import moment from "moment";
+
 const  AddNewStaff = ({ title }) => {
   const [file, setFile] = useState("");
 
@@ -61,12 +63,13 @@ const  AddNewStaff = ({ title }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const birthday = moment(ngaySinh.current.value).format("YYYY-MM-DD");
     setError(false);
     try {
       const res = await axios.post("/nhanvien/add", {
         id_cv: ma_cv,
         ten_nv: tenNv.current.value,
-        ngay_sinh: ngaySinh.current.value,
+        ngay_sinh: birthday,
         gioi_tinh: gioitinh,
         mat_khau: password.current.value,
         email: email.current.value
@@ -123,15 +126,15 @@ const  AddNewStaff = ({ title }) => {
               </div>
               <div className="formInput">
                 <label>Ngày sinh</label>
-                <input type="text" placeholder="2001/02/28" ref={ngaySinh} />
+                <input type="date" placeholder="2001/02/28" ref={ngaySinh} required/>
               </div>
               <div className="formInput">
                 <label>Tên chức vụ</label>
-                <input type="text" placeholder="9" min="0" defaultValue={tenCv} />
+                <input type="text" placeholder="9" min="0" defaultValue={tenCv} required/>
               </div>
               <div className="formInput">
                 <label>Email</label>
-                <input type="email" placeholder="example@gmail.com" ref={email} />
+                <input type="email" placeholder="example@gmail.com" ref={email} required/>
               </div>
               <div className="formInput">
                 <label>Giới Tính</label>
@@ -142,9 +145,9 @@ const  AddNewStaff = ({ title }) => {
               </div>
               <div className="formInput">
                 <label>Mật khẩu</label>
-                <input type="password" ref={password} />
+                <input type="password" ref={password} required/>
               </div>
-              <button onClick={handleSubmit}>Thêm nhân viên</button>
+              <button onClick={handleSubmit} className="buttonAdd">Thêm nhân viên</button>
             </form>
           </div>
 

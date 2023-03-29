@@ -118,23 +118,23 @@ const AddNewRoom = ({ inputs, title }) => {
               </div>
               <div className="formInput">
                 <label>Số Phòng</label>
-                <input type="number" placeholder="1234" min="0" ref={sp} />
+                <input type="number" placeholder="1234" min="0" ref={sp} required/>
               </div>
               <div className="formInput">
                 <label>Tên loại phòng</label>
-                <input type="text" placeholder="VIP" value={tenlp} />
+                <input type="text" placeholder="VIP" value={tenlp} required/>
               </div>
               <div className="formInput">
                 <label>Số Người</label>
-                <input type="number" placeholder="9" min="0" ref={sn} />
+                <input type="number" placeholder="9" min="0" ref={sn} required/>
               </div>
               <div className="formInput">
                 <label>Mô tả loại phòng</label>
-                <input type="text" value={mt} />
+                <input type="text" value={mt} required/>
               </div>
               <div className="formInput">
                 <label>Đơn Giá</label>
-                <input type="number" placeholder="12334455" min="0" ref={dg} />
+                <input type="number" placeholder="12334455" min="0" ref={dg} required/>
               </div>
               <div className="formInput">
                 <label>Tình trạng</label>
@@ -143,7 +143,7 @@ const AddNewRoom = ({ inputs, title }) => {
                   <option value="1">Đang Trống</option>   
                 </select>
               </div>
-              <button onClick={handleSubmit}>Thêm Phòng</button>
+              <button onClick={handleSubmit} className="buttonAdd">Thêm Phòng</button>
             </form>
           </div>
 

@@ -149,7 +149,7 @@ const UpdateStaff = ({ title }) => {
                             </div>
                             <div className="formInput">
                                 <label>Tên nhân viên</label>
-                                <input type="text" placeholder="Ngo Tri Truong" ref={tenNv} defaultValue={dftenNv}/>
+                                <input type="text" placeholder="Ngo Tri Truong" ref={tenNv} defaultValue={dftenNv} required/>
                             </div>
                             <div className="formInput">
                                 <label>Mã chức vụ</label>
@@ -160,19 +160,19 @@ const UpdateStaff = ({ title }) => {
                             </div>
                             <div className="formInput">
                                 <label>Ngày sinh</label>
-                                <input type="text" placeholder="2001/02/28" ref={ngaySinh} defaultValue={dfnSinh}/>
+                                <input type="text" ref={ngaySinh} defaultValue={dfnSinh} required/>
                             </div>
                             <div className="formInput">
                                 <label>Tên chức vụ</label>
-                                <input type="text" placeholder="9"  defaultValue={tenCv}/>
+                                <input type="text" placeholder="Tiếp tân"  defaultValue={tenCv} required/>
                             </div>
                             <div className="formInput">
                                 <label>Email</label>
-                                <input type="email" placeholder="example@gmail.com" ref={email} defaultValue={dfEmail} />
+                                <input type="email" placeholder="example@gmail.com" ref={email} defaultValue={dfEmail} required/>
                             </div>
                             <div className="formInput">
                                 <label>Giới Tính</label>
-                                <select defaultvalue={gioitinh} onChange={handleChangeGT} >
+                                <select defaultValue={gioitinh} onChange={handleChangeGT} >
                                     <option value="0">Nữ</option>
                                     <option value="1">Nam</option>
                                 </select>
@@ -181,7 +181,7 @@ const UpdateStaff = ({ title }) => {
                                 <label>Mật khẩu</label>
                                 <input type="password" ref={password} defaultValue={matkhau}/>
                             </div>
-                            <button onClick={handleSubmit}>Thêm nhân viên</button>
+                            <button onClick={handleSubmit} className="buttonAdd">Cập nhật</button>
                         </form>
                     </div>
 

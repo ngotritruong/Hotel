@@ -20,14 +20,14 @@ public class KhachHang implements Serializable {
 	private String cccd;
 	private String quoc_tich;
 	private String sdt;
-	private String gioi_tinh;
+	private byte gioi_tinh;
 	private String ngay_sinh;
 	private String email;
 	
 	public KhachHang() {
 	}
 
-	public KhachHang(String ho_ten, String cccd, String quoc_tich, String sdt, String gioi_tinh, String ngay_sinh,
+	public KhachHang(String ho_ten, String cccd, String quoc_tich, String sdt, byte gioi_tinh, String ngay_sinh,
 			String email) {
 		this.ho_ten = ho_ten;
 		this.cccd = cccd;
@@ -78,11 +78,11 @@ public class KhachHang implements Serializable {
 		this.sdt = sdt;
 	}
 
-	public String getGioi_tinh() {
+	public byte getGioi_tinh() {
 		return gioi_tinh;
 	}
 
-	public void setGioi_tinh(String gioi_tinh) {
+	public void setGioi_tinh(byte gioi_tinh) {
 		this.gioi_tinh = gioi_tinh;
 	}
 

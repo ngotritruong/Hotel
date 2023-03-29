@@ -152,16 +152,16 @@ const AddNewRoom = () => {
                             </div>
                             <div className="formInput">
                                 <label>Số Phòng</label>
-                                <input type="number" placeholder="1234" min="0" ref={sp} defaultValue={sophong}
+                                <input type="number" placeholder="1234" min="0" ref={sp} defaultValue={sophong} required
                                 />
                             </div>
                             <div className="formInput">
                                 <label>Tên loại phòng</label>
-                                <input type="text" placeholder="VIP" value={tenlp} />
+                                <input type="text" placeholder="VIP" value={tenlp} required/>
                             </div>
                             <div className="formInput">
                                 <label>Số Người</label>
-                                <input type="number" placeholder="9" min="0" ref={sn} defaultValue={songuoi} />
+                                <input type="number" placeholder="9" min="0" ref={sn} defaultValue={songuoi} required/>
                             </div>
                             <div className="formInput">
                                 <label>Mô tả loại phòng</label>
@@ -169,7 +169,7 @@ const AddNewRoom = () => {
                             </div>
                             <div className="formInput">
                                 <label>Đơn Giá</label>
-                                <input type="number" placeholder="12334455" min="0" ref={dg} defaultValue={dongia} />
+                                <input type="number" placeholder="12334455" min="0" ref={dg} defaultValue={dongia} required/>
                             </div>
                             <div className="formInput">
                                 <label>Tình trạng</label>
@@ -178,7 +178,7 @@ const AddNewRoom = () => {
                                     <option value="1">Đang Trống</option>
                                 </select>
                             </div>
-                            <button onClick={handleSubmit}>Cập nhật</button>
+                            <button onClick={handleSubmit} className="buttonAdd">Cập nhật</button>
 
                         </form>
                     </div>

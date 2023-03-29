@@ -1,17 +1,16 @@
-
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
-import DataTableStaff from "../../components/datatable/DataTableStaff"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import DataTableCustomer from "../../components/datatable/DataTableCustomer"
 
-const Staffs = () => {
-  const [staff , setStaff] = useState();
+const Customer = () => {
+  const [customer , setCustomer] = useState();
   useEffect(() => {
     const getPins = async () => {
       try {
-        const allStaff = await axios.get("/nhanvien/all");
-        setStaff(allStaff.data);
+        const allCustomer = await axios.get("/khachhang/all");
+        setCustomer(allCustomer.data);
       } catch (err) {
         console.log(err);
       }
@@ -23,10 +22,10 @@ const Staffs = () => {
       <Sidebar/>
       <div className="listContainer">
         <Navbar/>
-        {staff && <DataTableStaff staff={staff}/>}
+        {customer && <DataTableCustomer customer={customer}/>}
       </div>
     </div>
   )
 }
 
-export default Staffs
+export default Customer

@@ -4,7 +4,7 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import StoreIcon from "@mui/icons-material/Store";
-import InsertChartIcon from "@mui/icons-material/InsertChart";
+import ArticleIcon from '@mui/icons-material/Article';
 import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import MapsHomeWorkIcon from '@mui/icons-material/MapsHomeWork';
@@ -19,7 +19,7 @@ import { useCookies } from 'react-cookie'
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
   const [cookies, removeCookie] = useCookies(['Name']);
-  const handleLogout = () =>{
+  const handleLogout = () => {
     removeCookie(['Name']);
     window.location.href = "/login";
   }
@@ -37,19 +37,20 @@ const Sidebar = () => {
           <p className="title">MAIN</p>
           <Link to="/" style={{ textDecoration: "none" }}>
             <li>
-            <DashboardIcon className="icon" />
+              <DashboardIcon className="icon" />
               <span>Dashboard</span>
             </li>
           </Link>
-          
+
           <p className="title">LISTS</p>
 
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
-              <span>Quản lý khách hàng</span>
+              <span>Test</span>
             </li>
           </Link>
+
           <Link to="/rooms" style={{ textDecoration: "none" }}>
             <li>
               <MapsHomeWorkIcon className="icon" />
@@ -74,7 +75,13 @@ const Sidebar = () => {
           <Link to="/staffs" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
-              <span>Nhân viên</span>
+              <span>Quản lý nhân viên</span>
+            </li>
+          </Link>
+          <Link to="/customer" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonOutlineIcon className="icon" />
+              <span>Quản lý khách hàng</span>
             </li>
           </Link>
           <li>
@@ -82,6 +89,12 @@ const Sidebar = () => {
             <span>Notifications</span>
           </li>
           <p className="title">SERVICE</p>
+          <Link to="/reservation" style={{ textDecoration: "none" }}>
+            <li>
+              <ArticleIcon className="icon" />
+              <span>Phiếu đặt phòng</span>
+            </li>
+          </Link>
           <li>
             <SettingsSystemDaydreamOutlinedIcon className="icon" />
             <span>System Health</span>

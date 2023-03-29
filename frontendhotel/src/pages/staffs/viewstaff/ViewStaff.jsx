@@ -14,7 +14,6 @@ const ViewStaff = () => {
     const [dfnSinh, setDfNSinh] = useState();
     const [dfma_cv, setDfMa_cv] = useState();
     const [dftenNv, setDfTenNv] = useState();
-    const [matkhau, setMatkhau] = useState();
     const [dfEmail, setDfEmail] = useState();
     const [tenCv, setTenCv] = useState();
     const [gioitinh, setGioitinh] = useState();
@@ -24,11 +23,10 @@ const ViewStaff = () => {
                 const Staff = await axios.get(`/nhanvien/find/${state.id}`);
                 console.log(Staff.data);
                 setDfNSinh(Staff.data.ngay_sinh);
-                setDfMa_cv(Staff.data.id_cv);
                 setDfTenNv(Staff.data.ten_nv);
                 setGioitinh(Staff.data.gioi_tinh);
                 setDfEmail(Staff.data.email);
-                setMatkhau(Staff.data.mat_khau);
+              
                 setTenCv(Staff.data.ten_cv);
             } catch (err) {
                 console.log(err);
